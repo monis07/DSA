@@ -1,12 +1,22 @@
 class Solution {
     public int numIdenticalPairs(int[] nums) {
-        int k=0;
-        for(int i=0;i<nums.length-1;i++){
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[i]==nums[j])
-                    k++;
-            }
-        }
-        return k;
+        // Efficient solution
+        int count[]=new int[101];
+        for(int i:nums)
+            count[i]++;
+        int total=0;
+        for(int i:count)
+            total+=(i*(i-1))/2;
+        return total;
+        
+        //Brute force solution
+        // int k=0;
+        // for(int i=0;i<nums.length-1;i++){
+        //     for(int j=i+1;j<nums.length;j++){
+        //         if(nums[i]==nums[j])
+        //             k++;
+        //     }
+        // }
+        // return k;
     }
 }
