@@ -1,0 +1,32 @@
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        //Brute force solution
+        // int m=0,k=0;
+        // int arr[]=new int[nums.length];
+        // for(int i:nums){
+        //     for(int j:nums){
+        //         if(j<i)
+        //             k+=1;
+        //     }
+        //     arr[m]=k; 
+        //     k=0;
+        //     m+=1;
+        // }
+        // return arr;
+        
+        //Efficient solution
+        int count[]=new int[102];
+        for(int i:nums)
+            count[i]++;
+        for(int i=1;i<102;i++)
+            count[i]+=count[i-1];
+        int result[]=new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==0)
+                result[i]=0;
+        else
+            result[i]=count[nums[i]-1];
+        }
+        return result;
+    }
+}
