@@ -1,0 +1,26 @@
+class Solution {
+    public int[] createTargetArray(int[] nums, int[] index) {
+        //Efficient solution
+        List<Integer> list=new ArrayList<>();
+        for(int i=0;i<nums.length;i++)
+            list.add(index[i],nums[i]);
+        int t[]=new int[nums.length];
+        for(int i=0;i<nums.length;i++)
+            t[i]=list.get(i);
+        return t;
+        //Brute force solution
+        // int t[]=new int[nums.length];
+        // for(int i:t)
+        //     i=-1;
+        // for(int i=0;i<nums.length;i++){
+        //     if(t[index[i]]==-1)
+        //         t[index[i]]=nums[i];
+        //     else{
+        //         for(int j=nums.length-1;j>index[i];j--)
+        //             t[j]=t[j-1];
+        //         t[index[i]]=nums[i];
+        // }
+        // }
+        // return t;
+    }
+}
