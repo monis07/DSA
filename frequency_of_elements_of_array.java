@@ -31,7 +31,5 @@ public class Main
 		        count=1;
 		    }
 		}
-		if(i==n-1)
-		System.out.println(count);
 	}
 }
